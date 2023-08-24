@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import SeuNome from './components/SeuNome'
+import Saudacao from './components/Saudacao'
 
 function App() {
 
@@ -10,12 +11,13 @@ function App() {
     <div className="App">
       <h1>State Lift</h1>
       <SeuNome setNome={setNome}/>
-      {nome}
+      
+      <Saudacao nome={nome}/>
     </div>
   )
 }
 
-{/* Esse é o component App que funciona com o componente SeuNome*/}
+{/* Esse é o component App que funciona com o componente Saudacao*/}
 
 export default App
 
