@@ -1,23 +1,38 @@
-import { useState } from 'react'
-import './App.css'
-import SeuNome from './components/SeuNome'
-import Saudacao from './components/Saudacao'
+import React from 'react'
+import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
+import Home from './pages/Home'
+import Empresa from './pages/empresa'
+import Contato from './pages/contato'
+import Navbar from './components/NavBar'
+import Footer from './components/layoult/Footer'
+
+
 
 function App() {
 
-  const [nome, setNome] = useState()
 
   return (
-    <div className="App">
-      <h1>State Lift</h1>
-      <SeuNome setNome={setNome}/>
+    <Router>
       
-      <Saudacao nome={nome}/>
-    </div>
+    <Navbar />
+
+      <Routes>
+
+        <Route exact path="/" element={<Home />}></Route>
+
+        <Route path="/empresa" element={<Empresa />}></Route>
+
+        <Route path="/contato" element={<Contato />}></Route>
+
+      </Routes>
+
+<Footer />
+
+    </Router>
   )
 }
 
-{/* Esse é o component App que funciona com o componente Saudacao*/}
+{/* Esse é o component App que funciona com os componentes Footer, Navbar e componentes do pages*/}
 
 export default App
 
